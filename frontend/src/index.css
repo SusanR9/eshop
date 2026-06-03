@@ -1,0 +1,205 @@
+/* ===== GLOBAL RESET & DESIGN TOKENS ===== */
+@import url('./design/tokens.css');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFE5F1 0%, #FFF4E6 50%, #E8F5FF 100%);
+  background-attachment: fixed;
+  color: var(--clr-text);
+  font-family: 'Fredoka', 'Quicksand', 'Poppins', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--clr-primary-dark);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  color: var(--clr-text);
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* ===== GLASS CARD — bright version ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(255, 107, 157, 0.12), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ===== UTILITY ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(135deg, #FF6B9D, #FF8E53);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.5);
+}
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  border: 2.5px solid var(--clr-primary);
+  border-radius: 50px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+  background: rgba(255, 107, 157, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-secondary:hover {
+  background: var(--clr-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+/* ===== FORM INPUTS ===== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="file"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(255, 107, 157, 0.25);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--clr-text);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.98rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 4px rgba(255, 107, 157, 0.12);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  animation: fadeIn 0.45s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-8px) rotate(0.5deg);
+  box-shadow: 0 16px 40px rgba(255, 107, 157, 0.2), 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== ERROR / SUCCESS MSG ===== */
+.error-msg {
+  color: #E53E3E;
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+.success-msg {
+  color: #38A169;
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FFF0F5; }
+::-webkit-scrollbar-thumb { background: rgba(255,107,157,0.4); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--clr-primary); }
+
+input, textarea, select, button { max-width: 100%; }
+html, body { word-break: break-word; }
+body { background-attachment: scroll; }
+
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+  body { font-size: 15px; }
+}

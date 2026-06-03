@@ -1,0 +1,60 @@
+/* ===== ADMIN DASHBOARD ===== */
+.admin-dashboard { padding-top: 2rem; padding-bottom: 4rem; }
+.admin-dashboard h2 { font-size: 1.8rem; margin-bottom: 2rem; }
+
+.admin-layout { display: flex; gap: 2rem; align-items: flex-start; }
+
+.admin-section { padding: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.admin-section h3 { font-size: 1.25rem; border-bottom: 1px solid var(--clr-primary-muted); padding-bottom: 0.75rem; margin-bottom: 0.5rem; }
+
+.upload-section { flex: 1; max-width: 400px; }
+
+.admin-form { display: flex; flex-direction: column; gap: 1.15rem; }
+.form-row { display: flex; gap: 1rem; }
+.form-row > * { flex: 1; }
+.admin-form .btn-primary { margin-top: 0.5rem; }
+
+/* Products table */
+.products-section { flex: 2; overflow: hidden; }
+.orders-section { flex: 2; overflow: hidden; }
+
+.table-responsive { overflow-x: auto; }
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.admin-table th, .admin-table td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid var(--clr-primary-muted); white-space: nowrap; }
+.admin-table th { font-weight: 600; color: var(--clr-muted); background: hsla(220,15%,14%,0.5); }
+
+.product-thumb { width: 48px; height: 48px; object-fit: cover; border-radius: 8px; border: 1px solid var(--clr-primary-muted); }
+
+.action-cell { display: flex; gap: 0.5rem; align-items: center; }
+.btn-sm { padding: 0.3rem 0.75rem; font-size: 0.8rem; }
+.btn-danger { background: hsla(0,65%,50%,0.15); color: hsl(0,65%,65%); border: 1px solid hsla(0,65%,50%,0.3); border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+.btn-danger:hover { background: hsla(0,65%,50%,0.3); }
+
+/* Status badges */
+.status-badge { padding: 0.25rem 0.6rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; display: inline-block; }
+.status-pending { background: hsla(40,90%,50%,0.2); color: hsl(40,90%,65%); }
+.status-packed { background: hsla(200,90%,50%,0.2); color: hsl(200,90%,65%); }
+.status-shipped { background: hsla(260,70%,60%,0.2); color: hsl(260,70%,75%); }
+.status-out-for-delivery { background: hsla(280,80%,50%,0.2); color: hsl(280,80%,65%); }
+.status-delivered { background: hsla(145,65%,50%,0.2); color: hsl(145,65%,50%); }
+.status-cancelled { background: hsla(0,65%,50%,0.2); color: hsl(0,65%,60%); }
+
+.status-select { padding: 0.4rem; font-size: 0.85rem; border-radius: 6px; background: var(--clr-surface); border: 1px solid var(--clr-primary-muted); color: var(--clr-text); cursor: pointer; }
+.status-select:focus { border-color: var(--clr-primary); }
+
+.loading-text, .empty-text { color: var(--clr-muted); padding: 2rem 0; text-align: center; }
+
+/* Edit Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 1rem; }
+.modal-box { width: 100%; max-width: 480px; padding: 2rem; border-radius: 16px; display: flex; flex-direction: column; gap: 1.25rem; max-height: 90vh; overflow-y: auto; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; }
+.modal-header h3 { font-size: 1.2rem; margin: 0; }
+.modal-close { background: none; border: none; color: var(--clr-muted); font-size: 1.2rem; cursor: pointer; padding: 0.2rem 0.5rem; border-radius: 6px; transition: color 0.2s; }
+.modal-close:hover { color: var(--clr-text); }
+.edit-img-preview { border-radius: 10px; overflow: hidden; border: 1px solid var(--clr-primary-muted); }
+.edit-img-preview img { width: 100%; max-height: 180px; object-fit: cover; display: block; }
+
+@media (max-width: 992px) {
+  .admin-layout { flex-direction: column; }
+  .upload-section, .products-section { width: 100%; max-width: none; }
+}

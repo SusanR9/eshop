@@ -1,0 +1,115 @@
+/* ===== PRODUCT DETAILS PAGE ===== */
+.product-detail-page {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 2.5rem;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.9);
+  border-radius: 28px;
+  border: 2px solid rgba(255,107,157,0.15);
+  box-shadow: 0 12px 48px rgba(255,107,157,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-detail::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #FF6B9D, #FFB84D, #4ECDC4, #A78BFA);
+}
+
+.product-detail__image-wrapper {
+  flex: 1;
+  max-width: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FFF0F5, #FFF8F0);
+  border: 2px solid rgba(255,107,157,0.12);
+}
+
+.product-detail__image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.product-detail__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.product-detail__info h2 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  font-family: 'Fredoka', sans-serif;
+  color: #2D3748;
+}
+
+.product-price {
+  font-size: 1.9rem;
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(135deg, #FF6B9D, #FF8E53);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-stock {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Fredoka', sans-serif;
+}
+.in-stock  { color: #38A169; }
+.out-of-stock { color: #E53E3E; }
+
+.product-description {
+  font-size: 1.05rem;
+  color: #718096;
+  line-height: 1.7;
+}
+
+.product-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.product-actions button {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.05rem;
+}
+
+.product-page-loading {
+  text-align: center;
+  padding: 5rem 2rem;
+  font-size: 1.4rem;
+  color: #FF6B9D;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+}
+.product-page-error {
+  text-align: center;
+  padding: 5rem 2rem;
+  font-size: 1.2rem;
+  color: #E53E3E;
+}
+
+@media (max-width: 860px) {
+  .product-detail {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  .product-detail__image-wrapper { max-width: 100%; }
+}

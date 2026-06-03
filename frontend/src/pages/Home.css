@@ -1,0 +1,95 @@
+/* ===== HOME PAGE ===== */
+.home-container {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.search-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 20px;
+  border: 2px solid rgba(255,107,157,0.15);
+  box-shadow: 0 4px 16px rgba(255,107,157,0.1);
+}
+.search-results-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(135deg, #FF6B9D, #FFB84D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  width: max-content;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.9);
+  border: 2px solid rgba(255,107,157,0.2);
+  box-shadow: 0 4px 16px rgba(255,107,157,0.1);
+}
+.pagination-controls span {
+  font-weight: 600;
+  color: #888;
+  font-family: 'Fredoka', sans-serif;
+}
+.pagination-controls .page-num {
+  font-weight: 700;
+  color: #FF6B9D;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.4rem;
+  color: #FF6B9D;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.2rem;
+  color: #aaa;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.8);
+}
+
+@media (max-width: 860px) {
+  .search-results-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .search-results-header h2 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .pagination-controls {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+}

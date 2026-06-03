@@ -1,0 +1,31 @@
+.success-page {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.success-page h2 {
+  font-size: 2rem;
+  color: hsl(145, 65%, 50%);
+  margin-bottom: 1rem;
+}
+
+.success-page p {
+  color: var(--clr-muted);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.continue-btn {
+  padding: 0.75rem 1.75rem;
+  background: var(--clr-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.continue-btn:hover {
+  background: hsl(260, 70%, 50%);
+}

@@ -1,0 +1,86 @@
+/* ===== PRODUCT CARD ===== */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background: rgba(255,255,255,0.9);
+  border-radius: 24px;
+  border: 2.5px solid rgba(255,255,255,0.95);
+  box-shadow: 0 6px 24px rgba(255, 107, 157, 0.1), 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+/* Rainbow top border accent */
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF6B9D, #FFB84D, #4ECDC4, #A78BFA);
+  border-radius: 24px 24px 0 0;
+  z-index: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) rotate(0.5deg);
+  box-shadow: 0 20px 48px rgba(255, 107, 157, 0.22), 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.product-card__img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #FFF0F5, #FFF8F0);
+}
+
+.product-card__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-card__img-wrapper img {
+  transform: scale(1.1);
+}
+
+.product-card__info {
+  padding: 1rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-card__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2D3748;
+  letter-spacing: 0.3px;
+}
+
+.product-card__price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(135deg, #FF6B9D, #FF8E53);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-card__btn {
+  margin-top: 0.25rem;
+  width: 100%;
+  font-size: 0.9rem;
+  padding: 0.6rem;
+  border-radius: 50px;
+}
