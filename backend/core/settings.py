@@ -40,7 +40,7 @@ SECRET_KEY = 'django-insecure-!tuj3c3%daqi@3d$0hypi2yw3@d@smipk4hkw^n+i$=-n1&i%2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://eshop-xbwn.onrender.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["eshop-xbwn.onrender.com", "localhost", "127.0.0.1"]
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True

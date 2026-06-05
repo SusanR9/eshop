@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE = import.meta.env.VITE_API_URL || "https://eshop-xbwn.onrender.com/api";
+const BASE = import.meta.env.VITE_API_URL || `${window.location.origin}/api`;
 
 // Root of the backend server (no trailing /api/)
 export const MEDIA_BASE = BASE.replace(/\/api\/?$/, '');
@@ -23,13 +23,36 @@ export function resolveImage(image) {
 
 const api = axios.create({
   baseURL: BASE,
-  withCredentials: true,
 });
+
+const authRequiredPrefixes = [
+  '/orders/',
+  '/admin/',
+];
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('accessToken');
-  if (token) config.headers.Authorization = `Bearer ${token}`;
+  const url = config.url || '';
+  const shouldAttachToken = Boolean(
+    token && authRequiredPrefixes.some((prefix) => url.startsWith(prefix))
+  );
+
+  if (shouldAttachToken) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
   return config;
 });
+
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('isAdmin');
+    }
+    return Promise.reject(error);
+  }
+);
 
 export default api;
