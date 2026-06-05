@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/';
+const BASE = import.meta.env.VITE_API_URL || "https://eshop-xbwn.onrender.com/api";
 
 // Root of the backend server (no trailing /api/)
 export const MEDIA_BASE = BASE.replace(/\/api\/?$/, '');
