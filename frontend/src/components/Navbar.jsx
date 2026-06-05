@@ -25,7 +25,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-left">
         <NavLink to="/" className="logo">
-          <img src="/logo.svg" alt="Eshop Toys" className="logo-icon" />
+          <img src="/logo.png" alt="Eshop Toys" className="logo-icon" />
           <span>Eshop‑Toys</span>
         </NavLink>
         <form className="search-form" onSubmit={handleSearch}>
