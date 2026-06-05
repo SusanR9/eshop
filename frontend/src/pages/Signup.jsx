@@ -19,7 +19,7 @@ const Signup = () => {
       const res = await api.post('/auth/signup/', { name, email, password });
       const token = res.data.access;
       localStorage.setItem('accessToken', token);
-      navigate('/');
+      navigate('/', { replace: true });
     } catch (err) {
       setError(err.response?.data?.detail || 'Signup failed – please check your details.');
     } finally {

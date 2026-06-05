@@ -21,8 +21,10 @@ function Home() {
       const params = {
         limit: PAGE_SIZE,
         offset: (page - 1) * PAGE_SIZE,
-        search: searchQuery,
       };
+      if (searchQuery) {
+        params.search = searchQuery;
+      }
       const response = await api.get('/products/', { params });
       setProducts(response.data.results || []);
       setTotalPages(Math.ceil((response.data.count || 0) / PAGE_SIZE));
@@ -32,6 +34,14 @@ function Home() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (searchParams.has('search') && !searchQuery) {
+      const params = new URLSearchParams(searchParams);
+      params.delete('search');
+      setSearchParams(params, { replace: true });
+    }
+  }, [searchParams, searchQuery, setSearchParams]);
 
   useEffect(() => {
     fetchProducts();

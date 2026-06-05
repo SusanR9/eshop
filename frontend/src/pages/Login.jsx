@@ -18,7 +18,7 @@ const Login = () => {
       const res = await api.post('/auth/login/', { email, password });
       const token = res.data.access;
       localStorage.setItem('accessToken', token);
-      navigate('/');
+      navigate('/', { replace: true });
     } catch (err) {
       setError(err.response?.data?.detail || 'Invalid email or password.');
     } finally {
