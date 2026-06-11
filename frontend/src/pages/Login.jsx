@@ -41,6 +41,9 @@ const Login = () => {
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="Your password" />
           </label>
           {error && <p className="error-msg">{error}</p>}
+          <p className="auth-footer">
+            <Link to="/forgot-password">Forgot password?</Link>
+          </p>
           <button type="submit" className="btn-primary" disabled={loading}>
             {loading ? 'Logging in…' : 'Log In'}
           </button>

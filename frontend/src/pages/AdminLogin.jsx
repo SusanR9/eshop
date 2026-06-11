@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import api from '../api';
 import './Auth.css';
 
@@ -69,6 +69,9 @@ const AdminLogin = () => {
           </label>
 
           {error && <p className="error-msg">{error}</p>}
+          <p className="auth-footer">
+            <Link to="/admin/forgot-password">Forgot password?</Link>
+          </p>
 
           <button type="submit" className="btn-primary" disabled={loading}>
             {loading ? 'Signing in...' : 'Login to Dashboard'}

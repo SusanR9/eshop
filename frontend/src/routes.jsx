@@ -7,6 +7,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
+import ForgotPassword from './pages/ForgotPassword';
+import AdminForgotPassword from './pages/AdminForgotPassword';
 import Success from './pages/Success';
 import History from './pages/History';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -28,6 +30,8 @@ const AppRoutes = () => (
     <Route path="/admin/login" element={<AdminLogin />} />
     <Route path="/adminlogin" element={<AdminLogin />} />
     <Route path="/admin-login" element={<AdminLogin />} />
+    <Route path="/forgot-password" element={<ForgotPassword />} />
+    <Route path="/admin/forgot-password" element={<AdminForgotPassword />} />
     <Route path="/success" element={<Success />} />
     {/* User protected */}
     <Route element={<ProtectedRoute />}> 
