@@ -9,7 +9,7 @@ try:
         'currency': 'INR',
         'payment_capture': '1'
     })
-    print('✓ Razorpay credentials are valid!')
+    print('[SUCCESS] Razorpay credentials are valid!')
     print(f'Order created: {order["id"]}')
 except Exception as e:
-    print(f'✗ Razorpay credentials are invalid: {e}')
+    print(f'[ERROR] Razorpay credentials are invalid: {e}')
