@@ -205,8 +205,8 @@ class OrderCreateView(APIView):
         if payment_mode == "razorpay":
             try:
                 client = razorpay.Client(auth=(
-                    os.environ.get("RAZORPAY_KEY_ID", "test"),
-                    os.environ.get("RAZORPAY_KEY_SECRET", "test"),
+                    os.environ.get("RAZORPAY_KEY_ID", "rzp_test_SlyeZSQVRS6kuk"),
+                    os.environ.get("RAZORPAY_KEY_SECRET", "Qt1G3eLwSAFA8l5bHEHm69ct"),
                 ))
                 payment = client.order.create({
                     "amount": int(total_amount * 100),

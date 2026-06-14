@@ -60,7 +60,7 @@ const Checkout = () => {
         });
 
         const options = {
-          key: import.meta.env.VITE_RAZORPAY_KEY || 'rzp_test_placeholder',
+          key: import.meta.env.VITE_RAZORPAY_KEY || 'rzp_test_SlyeZSQVRS6kuk',
           amount: data.amount,
           currency: 'INR',
           name: 'Eshop‑Toys',
